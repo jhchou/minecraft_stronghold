@@ -1,5 +1,6 @@
 library(shiny)
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 library(corpcor) # for pseudo-inverse
 
 # Action button preferred to submit button
@@ -94,7 +95,7 @@ server <- function(input, output) {
       geom_point(data = df_p, color = 'red') +
       geom_label(data = df_p, aes(
           label = paste0('x = ', round(df_p$x), ', z = ', round(df_p$z))
-        ), size = 5, nudge_x = -100, nudge_y = 100) +
+        ), size = 5, nudge_x = 0, nudge_y = 50) +
       theme_bw() +
       theme(text = element_text(size = 20))
     g
