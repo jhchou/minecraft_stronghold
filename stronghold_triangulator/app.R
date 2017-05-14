@@ -88,11 +88,15 @@ server <- function(input, output) {
       )
     
     g <- df %>% ggplot(aes(x, z)) +
-      geom_segment(aes(xend = x2, yend = z2), alpha = 0.3, arrow = arrow(length = unit(0.25, "cm"))) +
+      geom_segment(aes(xend = x2, yend = z2), alpha = 0.4, arrow = arrow(length = unit(0.25, "cm"))) +
       geom_point(color = 'blue') +
       scale_y_reverse() + # because of the inverted 'z' axis of positive to North and negative to South
       geom_point(data = df_p, color = 'red') +
-      theme_bw()
+      geom_label(data = df_p, aes(
+          label = paste0('x = ', round(df_p$x), ', z = ', round(df_p$z))
+        ), size = 5, nudge_x = -100, nudge_y = 100) +
+      theme_bw() +
+      theme(text = element_text(size = 20))
     g
   })
 
