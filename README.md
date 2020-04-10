@@ -1,6 +1,6 @@
 # minecraft_stronghold
 
-Locate Minecraft stronghold from ender pearl throws by least-square intersection of lines
+Locate Minecraft stronghold from Eye of Ender throws by least-square intersection of lines
 
 Repo includes:
 
