@@ -15,8 +15,8 @@
 #
 # From:
 # - "Least-Squares Intersection of Lines, by Johannes Traa - UIUC 2013"
-# - http://cal.cs.illinois.edu/~johannes/research/
-# - http://cal.cs.illinois.edu/~johannes/research/LS_line_intersect.pdf
+# - http://cal.cs.illinois.edu/~johannes/research/ (link no longer works as of 2020-04)
+# - http://cal.cs.illinois.edu/~johannes/research/LS_line_intersect.pdf (link no longer works as of 2020-04)
 #
 # Also:
 # - https://math.stackexchange.com/questions/61719/finding-the-intersection-point-of-many-lines-in-3d-point-closest-to-all-lines
