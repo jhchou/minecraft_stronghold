@@ -10,6 +10,20 @@
 # [ ] do someting more intelligent about placement of textlabel field
 # [ ] or else, display the 'best' coordinates in a separate text box, rather than on plot
 #
+# Determine the 'best' point for the intersection of the lines,
+# by minimizing the perpendicular distances of the point to the lines
+#
+# From:
+# - "Least-Squares Intersection of Lines, by Johannes Traa - UIUC 2013"
+# - http://cal.cs.illinois.edu/~johannes/research/
+# - http://cal.cs.illinois.edu/~johannes/research/LS_line_intersect.pdf
+#
+# Also:
+# - https://math.stackexchange.com/questions/61719/finding-the-intersection-point-of-many-lines-in-3d-point-closest-to-all-lines
+#
+#
+# Example data from: http://www.purplefrog.com/~thoth/MinecraftStronghold/stronghold.html
+# - https://github.com/mutantbob/minecraft-stronghold-triangulator
 #
 
 library(shiny)
@@ -57,11 +71,8 @@ server <- function(input, output) {
         unit_z = cos(radians)
       )
     
-    # Determine the 'best' point for the intersection of the lines,
-    # by minimizing the perpendicular distances of the point to the lines
     # From: "Least-Squares Intersection of Lines, by Johannes Traa - UIUC 2013"
     # - http://cal.cs.illinois.edu/~johannes/research/LS_line_intersect.pdf
-
     k <- nrow(df) # number of lines
     dimension <- 2
     a <- df[, 1:2] %>% as.matrix() %>% t() # *columns* of origin points
